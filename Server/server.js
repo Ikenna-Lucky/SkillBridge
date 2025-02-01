@@ -19,10 +19,11 @@ app.use(
 );
 app.use(cookieParser());
 
-//API Endpoint
-// app.get("/", (req, res) => {
-//   res.send("API is working");
-// });
+// API Endpoint
+app.get("/", (req, res) => {
+  res.send("API is working");
+});
+
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.listen(port, () => {
