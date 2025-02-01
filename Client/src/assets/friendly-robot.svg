@@ -1,0 +1,96 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for metallic effects -->
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="50%" style="stop-color:#F0F0F0"/>
+      <stop offset="100%" style="stop-color:#E0E0E0"/>
+    </linearGradient>
+    
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#202840"/>
+      <stop offset="100%" style="stop-color:#101830"/>
+    </linearGradient>
+    
+    <!-- Glow effect for eyes -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Body base -->
+  <path d="M160 280 C160 280, 200 320, 240 280 L240 380 L160 380 Z" 
+        fill="url(#bodyGradient)" 
+        stroke="#D0D0D0" 
+        stroke-width="2"/>
+
+  <!-- Head -->
+  <g>
+    <!-- Main head shape -->
+    <path d="M120 100 C120 60, 280 60, 280 100 
+             L300 200 C300 260, 100 260, 100 200 Z" 
+          fill="url(#bodyGradient)" 
+          stroke="#D0D0D0" 
+          stroke-width="2"/>
+    
+    <!-- Screen/Face -->
+    <rect x="140" y="120" 
+          width="120" height="100" 
+          rx="20" 
+          fill="url(#screenGradient)" 
+          stroke="#4080FF" 
+          stroke-width="1"/>
+  </g>
+
+  <!-- Eyes with glow -->
+  <g filter="url(#glow)">
+    <circle cx="175" cy="160" r="12" fill="#40F0FF" opacity="0.9"/>
+    <circle cx="225" cy="160" r="12" fill="#40F0FF" opacity="0.9"/>
+  </g>
+
+  <!-- Smile -->
+  <path d="M175 190 Q200 210 225 190" 
+        stroke="#40F0FF" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        fill="none"
+        filter="url(#glow)"/>
+
+  <!-- Antenna -->
+  <g>
+    <rect x="195" y="70" width="10" height="30" 
+          fill="url(#bodyGradient)" 
+          stroke="#D0D0D0" 
+          stroke-width="1"/>
+    <circle cx="200" cy="60" r="8" 
+            fill="#40F0FF" 
+            filter="url(#glow)"/>
+  </g>
+
+  <!-- Side panels -->
+  <g>
+    <!-- Left panel -->
+    <path d="M100 140 L80 160 L80 220 L100 240" 
+          fill="url(#bodyGradient)" 
+          stroke="#D0D0D0" 
+          stroke-width="2"/>
+    
+    <!-- Right panel -->
+    <path d="M300 140 L320 160 L320 220 L300 240" 
+          fill="url(#bodyGradient)" 
+          stroke="#D0D0D0" 
+          stroke-width="2"/>
+  </g>
+
+  <!-- Decorative elements -->
+  <g>
+    <circle cx="90" cy="180" r="5" fill="#40F0FF" filter="url(#glow)"/>
+    <circle cx="90" cy="200" r="5" fill="#40F0FF" filter="url(#glow)"/>
+    <circle cx="310" cy="180" r="5" fill="#40F0FF" filter="url(#glow)"/>
+    <circle cx="310" cy="200" r="5" fill="#40F0FF" filter="url(#glow)"/>
+  </g>
+</svg>
