@@ -17,10 +17,10 @@ app.use(express.json()); //All request made will be passed in JSON format. in ot
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(cookieParser());
 
-//API Endpoint
-// app.get("/", (req, res) => {
-//   res.send("API is working");
-// });
+API Endpoint
+app.get("/", (req, res) => {
+  res.send("API is working");
+});
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.listen(port, () => {
