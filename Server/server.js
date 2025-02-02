@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 4000; // Here process.env is a object in Node.js that helps to access the env variable
 connectDB();
 
-const allowedOrigins = ["http://localhost:5173"]; // the port at which your frontend is running on.
+const allowedOrigins = ["https://skillbridge-client.vercel.app"]; // the port at which your frontend is running on.
 
 app.use(express.json()); //All request made will be passed in JSON format. in other words, it allows my API to understand and process data sent in JSON format
 app.use(cors({ origin: allowedOrigins, credentials: true }));
